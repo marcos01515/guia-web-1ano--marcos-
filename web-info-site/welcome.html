@@ -16,73 +16,51 @@
             font-family: Arial, sans-serif;
             color: white;
         }
-        .welcome-container {
+        .welcome-box {
             text-align: center;
-            padding: 40px;
-            border-radius: 15px;
+            padding: 50px;
             background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             backdrop-filter: blur(10px);
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin: 0 0 20px 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            opacity: 0.9;
         }
         .enter-button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 20px 60px;
+            font-size: 1.5em;
             background: #00ff88;
             color: #1e3c72;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,255,136,0.2);
         }
         .enter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,255,136,0.3);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,255,136,0.4);
         }
-        .highlights {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .highlight-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            flex: 1;
-            max-width: 150px;
+        .enter-button:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
 <body>
-    <div class="welcome-container">
+    <div class="welcome-box">
         <h1>Guia Web</h1>
-        <p>Seu guia completo sobre desenvolvimento web<br>HTML, CSS, JavaScript e muito mais!</p>
-        <a href="main.html" class="enter-button">Entrar no Site</a>
-        <div class="highlights">
-            <div class="highlight-item">
-                <h3>HTML</h3>
-                <p>Estrutura</p>
-            </div>
-            <div class="highlight-item">
-                <h3>CSS</h3>
-                <p>Estilo</p>
-            </div>
-            <div class="highlight-item">
-                <h3>JS</h3>
-                <p>Interação</p>
-            </div>
-        </div>
+        <a href="index.html" class="enter-button">Entrar</a>
     </div>
 </body>
 </html>
