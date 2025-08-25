@@ -1,10 +1,11 @@
 /* Estilos globais */
 :root {
-    --primary-color: #4285f4;
-    --secondary-color: #34a853;
-    --dark-color: #202124;
+    --primary-color: #2563EB;
+    --secondary-color: #10B981;
+    --dark-color: #111827;
     --light-color: #ffffff;
-    --background-color: #f8f9fa;
+    --background-color: #F3F4F6;
+    --border-color: #E5E7EB;
 }
 
 body {
@@ -17,10 +18,10 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, var(--primary-color), #2b68c9);
+    background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
     color: var(--light-color);
     padding: 2rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.1);
 }
 
 header h1 {
@@ -75,7 +76,8 @@ section {
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 15px rgba(37, 99, 235, 0.05);
     transition: transform 0.3s ease;
 }
 
@@ -172,9 +174,9 @@ p a:hover, li a:hover {
 
 /* Estilo especial para elementos importantes */
 .highlight {
-    background: #f8f9fa;
+    background: var(--background-color);
     padding: 1rem;
-    border-left: 4px solid var(--primary-color);
+    border-left: 4px solid var(--secondary-color);
     margin: 1rem 0;
 }
 
