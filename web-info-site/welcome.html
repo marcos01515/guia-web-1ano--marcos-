@@ -59,8 +59,63 @@
 </head>
 <body>
     <div class="welcome-box">
+        <div class="robot">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <!-- Corpo do robô -->
+                <rect x="60" y="80" width="80" height="80" rx="10" fill="#4285f4" class="body">
+                    <animate attributeName="y" values="85;80;85" dur="2s" repeatCount="indefinite"/>
+                </rect>
+                <!-- Cabeça -->
+                <rect x="70" y="40" width="60" height="50" rx="5" fill="#4285f4" class="head">
+                    <animate attributeName="y" values="45;40;45" dur="2s" repeatCount="indefinite"/>
+                </rect>
+                <!-- Olhos -->
+                <circle cx="90" cy="60" r="5" fill="white" class="eye">
+                    <animate attributeName="cy" values="65;60;65" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="110" cy="60" r="5" fill="white" class="eye">
+                    <animate attributeName="cy" values="65;60;65" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Antenas -->
+                <line x1="80" y1="40" x2="70" y2="20" stroke="#4285f4" stroke-width="3" class="antenna">
+                    <animate attributeName="y1" values="45;40;45" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="y2" values="25;20;25" dur="2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="120" y1="40" x2="130" y2="20" stroke="#4285f4" stroke-width="3" class="antenna">
+                    <animate attributeName="y1" values="45;40;45" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="y2" values="25;20;25" dur="2s" repeatCount="indefinite"/>
+                </line>
+                <!-- Braços -->
+                <line x1="60" y1="100" x2="40" y2="120" stroke="#4285f4" stroke-width="8" class="arm">
+                    <animate attributeName="x2" values="35;40;35" dur="3s" repeatCount="indefinite"/>
+                </line>
+                <line x1="140" y1="100" x2="160" y2="120" stroke="#4285f4" stroke-width="8" class="arm">
+                    <animate attributeName="x2" values="165;160;165" dur="3s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+        </div>
         <h1>Guia Web</h1>
         <a href="index.html" class="enter-button">Entrar</a>
     </div>
+    <style>
+        .robot {
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 10px rgba(66,133,244,0.3));
+        }
+        .robot svg {
+            transform-origin: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .head, .body, .arm, .antenna {
+            transition: all 0.3s ease;
+        }
+        .welcome-box:hover .robot svg {
+            transform: scale(1.05);
+        }
+    </style>
 </body>
 </html>
