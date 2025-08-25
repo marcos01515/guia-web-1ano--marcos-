@@ -221,12 +221,120 @@ p a:hover, li a:hover {
     border-bottom-color: var(--primary-color);
 }
 
+/* Cards de tecnologia */
+section {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+section:hover::before {
+    opacity: 1;
+    animation: rotate 10s linear infinite;
+}
+
+/* Efeitos de destaque */
+strong {
+    position: relative;
+    padding: 0 2px;
+    transition: color 0.3s ease;
+}
+
+strong::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+strong:hover {
+    color: var(--secondary-color);
+}
+
+strong:hover::after {
+    width: 100%;
+}
+
+/* Animações para elementos da lista */
+li {
+    position: relative;
+    padding-left: 20px;
+    transition: transform 0.2s ease;
+}
+
+li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    transform: translateX(5px);
+}
+
+li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efeitos de botão */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Animações adicionais */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 /* Estilo especial para elementos importantes */
 .highlight {
     background: var(--background-color);
     padding: 1rem;
     border-left: 4px solid var(--secondary-color);
     margin: 1rem 0;
+    animation: pulse 2s infinite;
 }
 
 /* Efeito de hover nos cards de seção */
