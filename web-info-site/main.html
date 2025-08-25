@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Web - Login & Conteúdo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .login-container h2 {
+            text-align: center;
+            color: #005fa3;
+        }
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: #005fa3;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background: #003f6b;
+        }
+        .login-error {
+            color: #d00;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .site-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginBox">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="login-error" id="loginError" style="display:none;"></div>
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+    <div class="site-content" id="siteContent">
+        <!-- Conteúdo do site (index.html) -->
+        <header>
+            <h1>Guia Web: HTML, CSS, JavaScript e Tecnologias</h1>
+            <nav>
+                <ul>
+                    <li><a href="#html-css-js">HTML, CSS e JavaScript</a></li>
+                    <li><a href="#boas-praticas">Boas Práticas</a></li>
+                    <li><a href="#panorama">Panorama de Tecnologias</a></li>
+                    <li><a href="#fluxograma">Fluxograma de Projeto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="html-css-js">
+                <h2>1. O que são HTML, CSS e JavaScript?</h2>
+                <ul>
+                    <li><strong>HTML</strong>: Linguagem de marcação usada para estruturar o conteúdo de páginas web.</li>
+                    <li><strong>CSS</strong>: Linguagem de estilos utilizada para definir a aparência visual do conteúdo HTML.</li>
+                    <li><strong>JavaScript</strong>: Linguagem de programação que permite criar interatividade e dinamicidade nas páginas web.</li>
+                </ul>
+                <p><em>Papel de cada um:</em> HTML constrói a base, CSS estiliza, JavaScript traz funcionalidades.</p>
+            </section>
+            <section id="boas-praticas">
+                <h2>2. Boas práticas profissionais</h2>
+                <ul>
+                    <li><strong>Acessibilidade</strong>: Tornar o site utilizável por todos, incluindo pessoas com deficiência.</li>
+                    <li><strong>Semântica</strong>: Utilizar tags HTML apropriadas para dar significado ao conteúdo.</li>
+                    <li><strong>Responsividade</strong>: Garantir que o site funcione bem em diferentes dispositivos e tamanhos de tela.</li>
+                    <li><strong>Organização</strong>: Manter o código e os arquivos bem estruturados e documentados.</li>
+                    <li><strong>Versionamento</strong>: Utilizar sistemas como Git para controlar alterações e colaborar em equipe.</li>
+                </ul>
+            </section>
+            <section id="panorama">
+                <h2>3. Panorama de tecnologias web</h2>
+                <ul>
+                    <li><strong>Front-end</strong>: Interface do usuário (HTML, CSS, JavaScript, frameworks como React, Vue).</li>
+                    <li><strong>Back-end</strong>: Lógica de negócio e acesso a dados (Node.js, Python, Java, PHP).</li>
+                    <li><strong>Bancos de dados</strong>: Armazenamento de informações (MySQL, MongoDB, PostgreSQL).</li>
+                    <li><strong>DevOps</strong>: Automação de deploy, integração contínua, infraestrutura (Docker, CI/CD).</li>
+                    <li><strong>Testes</strong>: Garantia de qualidade (Jest, Mocha, Selenium).</li>
+                </ul>
+                <p>Como escolher? Avalie requisitos do projeto, equipe, escalabilidade e comunidade das tecnologias.</p>
+            </section>
+            <section id="fluxograma">
+                <h2>4. Fluxograma de um projeto web completo</h2>
+                <ol>
+                    <li>Ideia e planejamento</li>
+                    <li>Prototipação e design</li>
+                    <li>Desenvolvimento front-end</li>
+                    <li>Desenvolvimento back-end</li>
+                    <li>Integração com banco de dados</li>
+                    <li>Testes</li>
+                    <li>Deploy (publicação)</li>
+                    <li>Manutenção e evolução</li>
+                </ol>
+                <img src="fluxograma.png" alt="Fluxograma de Projeto Web" style="max-width:100%;height:auto;">
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Guia Web. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var user = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
+        var errorDiv = document.getElementById('loginError');
+        if(user === 'admin' && pass === '1234') {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('siteContent').style.display = 'block';
+        } else {
+            errorDiv.textContent = 'Usuário ou senha inválidos.';
+            errorDiv.style.display = 'block';
+        }
+    });
+    // Interatividade de navegação
+    document.querySelectorAll('.site-content nav a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                window.scrollTo({
+                    top: target.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+</html>
