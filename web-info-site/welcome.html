@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Guia Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .welcome-container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .enter-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #00ff88;
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .enter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,255,136,0.3);
+        }
+        .highlights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+            max-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Guia Web</h1>
+        <p>Seu guia completo sobre desenvolvimento web<br>HTML, CSS, JavaScript e muito mais!</p>
+        <a href="main.html" class="enter-button">Entrar no Site</a>
+        <div class="highlights">
+            <div class="highlight-item">
+                <h3>HTML</h3>
+                <p>Estrutura</p>
+            </div>
+            <div class="highlight-item">
+                <h3>CSS</h3>
+                <p>Estilo</p>
+            </div>
+            <div class="highlight-item">
+                <h3>JS</h3>
+                <p>Interação</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
