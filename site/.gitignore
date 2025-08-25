@@ -1,5 +1,0 @@
-# Ignorar arquivos de configuração do sistema
-.DS_Store
-Thumbs.db
-node_modules/
-.env
