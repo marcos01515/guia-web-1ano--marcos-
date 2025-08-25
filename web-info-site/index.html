@@ -8,6 +8,39 @@
 </head>
 <body>
     <header>
+        <div class="robot-container">
+            <div class="robot">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <!-- Corpo do robô -->
+                    <rect x="45" y="60" width="60" height="60" rx="8" fill="#7C3AED" class="body">
+                        <animate attributeName="y" values="62;60;62" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+                    <!-- Cabeça -->
+                    <rect x="52.5" y="30" width="45" height="37.5" rx="5" fill="#7C3AED" class="head">
+                        <animate attributeName="y" values="32;30;32" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+                    <!-- Olhos -->
+                    <circle cx="67.5" cy="45" r="4" fill="white" class="eye">
+                        <animate attributeName="cy" values="47;45;47" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle cx="82.5" cy="45" r="4" fill="white" class="eye">
+                        <animate attributeName="cy" values="47;45;47" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Antenas -->
+                    <line x1="60" y1="30" x2="52.5" y2="15" stroke="#7C3AED" stroke-width="3" class="antenna">
+                        <animate attributeName="y1" values="32;30;32" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="y2" values="17;15;17" dur="2s" repeatCount="indefinite"/>
+                    </line>
+                    <line x1="90" y1="30" x2="97.5" y2="15" stroke="#7C3AED" stroke-width="3" class="antenna">
+                        <animate attributeName="y1" values="32;30;32" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="y2" values="17;15;17" dur="2s" repeatCount="indefinite"/>
+                    </line>
+                </svg>
+            </div>
+            <div class="message-bubble">
+                Olá, bom dia! Espero que estejam bem!
+            </div>
+        </div>
         <h1>Guia Web: HTML, CSS, JavaScript e Tecnologias</h1>
         <nav>
             <ul>
