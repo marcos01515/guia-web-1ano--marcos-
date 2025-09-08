@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Código por Tópico</title>
+    <style>
+        :root {
+            --primary-color: #2563EB;
+            --secondary-color: #10B981;
+            --accent-1: #FF3366;
+            --accent-2: #00F260;
+            --accent-3: #7C4DFF;
+            --accent-4: #FFA726;
+            --bg-dark: #1E1E1E;
+            --text-light: #D4D4D4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .topic-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .code-example {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Consolas', monospace;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-example::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 8px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 0 8px 0 8px;
+            font-size: 0.8em;
+        }
+
+        .explanation {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+        }
+
+        .note {
+            background: rgba(124, 77, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent-3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplos de Código por Tópico</h1>
+
+        <!-- HTML Estrutura Básica -->
+        <section class="topic-section">
+            <h2>1. HTML - Estrutura e Semântica</h2>
+            
+            <h3>Estrutura Básica HTML5</h3>
+            <div class="code-example" data-language="HTML">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu Site&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id="home"&gt;
+            &lt;h1&gt;Bem-vindo&lt;/h1&gt;
+            &lt;article&gt;
+                &lt;h2&gt;Artigo Principal&lt;/h2&gt;
+                &lt;p&gt;Conteúdo do artigo...&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Meu Site&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+            <div class="explanation">
+                Este exemplo demonstra a estrutura semântica do HTML5 com elementos como header, nav, main, section, article e footer.
+            </div>
+
+            <h3>Formulário com Validação</h3>
+            <div class="code-example" data-language="HTML">
+<pre>
+&lt;form id="contato" novalidate&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+        &lt;input type="text" 
+               id="nome" 
+               name="nome" 
+               required 
+               minlength="2" 
+               pattern="[A-Za-zÀ-ÿ\s]+"&gt;
+        &lt;span class="error" id="nome-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" 
+               id="email" 
+               name="email" 
+               required&gt;
+        &lt;span class="error" id="email-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-group"&gt;
+        &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+        &lt;textarea id="mensagem" 
+                  name="mensagem" 
+                  required 
+                  minlength="10"&gt;&lt;/textarea&gt;
+        &lt;span class="error" id="mensagem-error"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+            </div>
+        </section>
+
+        <!-- CSS Moderno -->
+        <section class="topic-section">
+            <h2>2. CSS Moderno</h2>
+            
+            <h3>Layout Flexbox</h3>
+            <div class="code-example" data-language="CSS">
+<pre>
+/* Layout Flexbox Responsivo */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+</pre>
+            </div>
+
+            <h3>Grid Layout</h3>
+            <div class="code-example" data-language="CSS">
+<pre>
+/* Grid Layout Moderno */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Áreas do Grid */
+.layout {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav content sidebar"
+        "footer footer footer";
+    gap: 20px;
+}
+
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+.content { grid-area: content; }
+.sidebar { grid-area: sidebar; }
+.footer { grid-area: footer; }
+</pre>
+            </div>
+
+            <h3>Animações CSS</h3>
+            <div class="code-example" data-language="CSS">
+<pre>
+/* Animações e Transições */
+.button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+</pre>
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <section class="topic-section">
+            <h2>3. JavaScript Moderno</h2>
+            
+            <h3>Manipulação do DOM</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// Seleção e Manipulação do DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#contato');
+    const mensagemSucesso = document.querySelector('.sucesso');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const dados = Object.fromEntries(formData);
+
+        try {
+            const response = await fetch('/api/contato', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            });
+
+            if (response.ok) {
+                mensagemSucesso.classList.add('visible');
+                form.reset();
+            }
+        } catch (erro) {
+            console.error('Erro:', erro);
+        }
+    });
+});
+</pre>
+            </div>
+
+            <h3>Classes e Módulos</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// Classe com Módulos
+export class Carrossel {
+    constructor(elemento, opcoes = {}) {
+        this.elemento = elemento;
+        this.slides = [...elemento.querySelectorAll('.slide')];
+        this.atual = 0;
+        this.opcoes = {
+            autoPlay: opcoes.autoPlay || false,
+            intervalo: opcoes.intervalo || 3000
+        };
+
+        this.inicializar();
+    }
+
+    inicializar() {
+        this.criarControles();
+        if (this.opcoes.autoPlay) {
+            this.iniciarAutoPlay();
+        }
+    }
+
+    proximo() {
+        this.atual = (this.atual + 1) % this.slides.length;
+        this.atualizar();
+    }
+
+    anterior() {
+        this.atual = (this.atual - 1 + this.slides.length) % this.slides.length;
+        this.atualizar();
+    }
+
+    atualizar() {
+        this.slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${100 * (i - this.atual)}%)`;
+        });
+    }
+
+    iniciarAutoPlay() {
+        setInterval(() => this.proximo(), this.opcoes.intervalo);
+    }
+}
+
+// Uso
+import { Carrossel } from './carrossel.js';
+
+const meuCarrossel = new Carrossel(
+    document.querySelector('.carrossel'),
+    { autoPlay: true }
+);
+</pre>
+            </div>
+
+            <h3>Async/Await e Fetch API</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// Chamadas API com Async/Await
+class API {
+    static async buscarDados(endpoint) {
+        try {
+            const response = await fetch(`/api/${endpoint}`);
+            
+            if (!response.ok) {
+                throw new Error(`Erro HTTP: ${response.status}`);
+            }
+
+            const dados = await response.json();
+            return dados;
+        } catch (erro) {
+            console.error('Erro na API:', erro);
+            throw erro;
+        }
+    }
+
+    static async enviarDados(endpoint, dados) {
+        try {
+            const response = await fetch(`/api/${endpoint}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            });
+
+            return await response.json();
+        } catch (erro) {
+            console.error('Erro ao enviar:', erro);
+            throw erro;
+        }
+    }
+}
+
+// Uso com tratamento de erro
+try {
+    const usuarios = await API.buscarDados('usuarios');
+    const novoUsuario = await API.enviarDados('usuarios', {
+        nome: 'João',
+        email: 'joao@email.com'
+    });
+} catch (erro) {
+    // Tratamento de erro
+}
+</pre>
+            </div>
+        </section>
+
+        <!-- APIs e Backend -->
+        <section class="topic-section">
+            <h2>4. APIs e Backend</h2>
+            
+            <h3>API REST com Express</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+const express = require('express');
+const router = express.Router();
+
+// Middleware de autenticação
+const autenticar = (req, res, next) => {
+    const token = req.headers.authorization;
+    if (!token) {
+        return res.status(401).json({ erro: 'Token não fornecido' });
+    }
+    // Verificar token...
+    next();
+};
+
+// CRUD Routes
+router.get('/usuarios', autenticar, async (req, res) => {
+    try {
+        const usuarios = await Usuario.find()
+            .select('-senha')
+            .sort({ criadoEm: -1 });
+        res.json(usuarios);
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+});
+
+router.post('/usuarios', async (req, res) => {
+    try {
+        const { nome, email, senha } = req.body;
+        
+        // Validação
+        if (!nome || !email || !senha) {
+            return res.status(400).json({ 
+                erro: 'Todos os campos são obrigatórios' 
+            });
+        }
+
+        // Verificar se usuário já existe
+        const usuarioExiste = await Usuario.findOne({ email });
+        if (usuarioExiste) {
+            return res.status(400).json({ 
+                erro: 'Email já cadastrado' 
+            });
+        }
+
+        // Criar novo usuário
+        const usuario = new Usuario({ nome, email, senha });
+        await usuario.save();
+
+        res.status(201).json({ 
+            mensagem: 'Usuário criado com sucesso' 
+        });
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+});
+</pre>
+            </div>
+
+            <h3>MongoDB com Mongoose</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// Schema e Modelo
+const mongoose = require('mongoose');
+
+const usuarioSchema = new mongoose.Schema({
+    nome: {
+        type: String,
+        required: [true, 'Nome é obrigatório'],
+        trim: true,
+        minlength: [2, 'Nome deve ter no mínimo 2 caracteres']
+    },
+    email: {
+        type: String,
+        required: [true, 'Email é obrigatório'],
+        unique: true,
+        lowercase: true,
+        validate: {
+            validator: function(v) {
+                return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v);
+            },
+            message: props => `${props.value} não é um email válido!`
+        }
+    },
+    senha: {
+        type: String,
+        required: true,
+        minlength: [6, 'Senha deve ter no mínimo 6 caracteres']
+    },
+    posts: [{
+        titulo: String,
+        conteudo: String,
+        criadoEm: { type: Date, default: Date.now }
+    }],
+    ativo: {
+        type: Boolean,
+        default: true
+    },
+    criadoEm: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+// Métodos do modelo
+usuarioSchema.methods.criarPost = async function(postData) {
+    this.posts.push(postData);
+    return await this.save();
+};
+
+// Middleware (hooks)
+usuarioSchema.pre('save', async function(next) {
+    if (this.isModified('senha')) {
+        this.senha = await bcrypt.hash(this.senha, 12);
+    }
+    next();
+});
+
+const Usuario = mongoose.model('Usuario', usuarioSchema);
+</pre>
+            </div>
+        </section>
+
+        <!-- Testes -->
+        <section class="topic-section">
+            <h2>5. Testes</h2>
+            
+            <h3>Testes Unitários com Jest</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// Arquivo: usuario.test.js
+const { validarUsuario, Usuario } = require('./usuario');
+
+describe('Validação de Usuário', () => {
+    test('deve validar um usuário correto', () => {
+        const usuario = {
+            nome: 'João Silva',
+            email: 'joao@email.com',
+            senha: '123456'
+        };
+
+        expect(validarUsuario(usuario)).toBe(true);
+    });
+
+    test('deve rejeitar email inválido', () => {
+        const usuario = {
+            nome: 'João Silva',
+            email: 'email-invalido',
+            senha: '123456'
+        };
+
+        expect(validarUsuario(usuario)).toBe(false);
+    });
+
+    test('deve rejeitar senha curta', () => {
+        const usuario = {
+            nome: 'João Silva',
+            email: 'joao@email.com',
+            senha: '123'
+        };
+
+        expect(validarUsuario(usuario)).toBe(false);
+    });
+});
+
+describe('Classe Usuario', () => {
+    let usuario;
+
+    beforeEach(() => {
+        usuario = new Usuario('João', 'joao@email.com');
+    });
+
+    test('deve criar um usuário corretamente', () => {
+        expect(usuario.nome).toBe('João');
+        expect(usuario.email).toBe('joao@email.com');
+    });
+
+    test('deve adicionar posts ao usuário', () => {
+        usuario.adicionarPost('Título', 'Conteúdo');
+        expect(usuario.posts).toHaveLength(1);
+        expect(usuario.posts[0].titulo).toBe('Título');
+    });
+});
+</pre>
+            </div>
+
+            <h3>Testes E2E com Cypress</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// cypress/integration/login.spec.js
+describe('Login', () => {
+    beforeEach(() => {
+        cy.visit('/login');
+    });
+
+    it('deve fazer login com sucesso', () => {
+        cy.get('[data-cy=email]')
+            .type('usuario@exemplo.com');
+        
+        cy.get('[data-cy=senha]')
+            .type('senha123');
+        
+        cy.get('[data-cy=btn-login]')
+            .click();
+        
+        // Verificar se redirecionou para dashboard
+        cy.url()
+            .should('include', '/dashboard');
+        
+        // Verificar se mostra mensagem de boas-vindas
+        cy.get('[data-cy=mensagem-bemvindo]')
+            .should('be.visible')
+            .and('contain', 'Bem-vindo');
+    });
+
+    it('deve mostrar erro com credenciais inválidas', () => {
+        cy.get('[data-cy=email]')
+            .type('invalido@exemplo.com');
+        
+        cy.get('[data-cy=senha]')
+            .type('senha-errada');
+        
+        cy.get('[data-cy=btn-login]')
+            .click();
+        
+        // Verificar mensagem de erro
+        cy.get('[data-cy=erro-login]')
+            .should('be.visible')
+            .and('contain', 'Email ou senha inválidos');
+        
+        // Garantir que não redirecionou
+        cy.url()
+            .should('include', '/login');
+    });
+
+    it('deve validar campos obrigatórios', () => {
+        cy.get('[data-cy=btn-login]')
+            .click();
+        
+        cy.get('[data-cy=erro-email]')
+            .should('be.visible');
+        
+        cy.get('[data-cy=erro-senha]')
+            .should('be.visible');
+    });
+});
+</pre>
+            </div>
+        </section>
+
+        <section class="topic-section">
+            <h2>6. Segurança Web</h2>
+            
+            <h3>Proteção contra XSS</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+// Middleware de segurança
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const app = express();
+
+// Configurações de segurança
+app.use(helmet()); // Headers de segurança
+app.use(xss()); // Proteção XSS
+
+// Sanitização de entrada
+const sanitizarEntrada = (texto) => {
+    return texto
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;')
+        .replace(/\//g, '&#x2F;');
+};
+
+// Middleware de validação
+const validarEntrada = (req, res, next) => {
+    for (let key in req.body) {
+        if (typeof req.body[key] === 'string') {
+            req.body[key] = sanitizarEntrada(req.body[key]);
+        }
+    }
+    next();
+};
+
+app.use(validarEntrada);
+</pre>
+            </div>
+
+            <h3>Autenticação JWT</h3>
+            <div class="code-example" data-language="JavaScript">
+<pre>
+const jwt = require('jsonwebtoken');
+
+// Middleware de autenticação JWT
+const autenticarJWT = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ 
+            erro: 'Token não fornecido' 
+        });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.usuario = decoded;
+        next();
+    } catch (erro) {
+        return res.status(403).json({ 
+            erro: 'Token inválido' 
+        });
+    }
+};
+
+// Login com geração de token
+app.post('/login', async (req, res) => {
+    try {
+        const { email, senha } = req.body;
+        
+        // Verificar usuário
+        const usuario = await Usuario.findOne({ email });
+        if (!usuario) {
+            return res.status(401).json({ 
+                erro: 'Credenciais inválidas' 
+            });
+        }
+
+        // Verificar senha
+        const senhaValida = await bcrypt.compare(
+            senha, 
+            usuario.senha
+        );
+        
+        if (!senhaValida) {
+            return res.status(401).json({ 
+                erro: 'Credenciais inválidas' 
+            });
+        }
+
+        // Gerar token
+        const token = jwt.sign(
+            { id: usuario._id },
+            process.env.JWT_SECRET,
+            { expiresIn: '24h' }
+        );
+
+        res.json({ token });
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+});
+</pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
