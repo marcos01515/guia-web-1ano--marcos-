@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Código - Guia Web</title>
+    <style>
+        :root {
+            --primary-color: #2563EB;
+            --secondary-color: #10B981;
+            --background-dark: #1E1E1E;
+            --text-light: #D4D4D4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .example-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .example-section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: var(--background-dark);
+            color: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: attr(data-language);
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 0 8px 0 8px;
+            font-size: 0.8em;
+        }
+
+        .description {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exemplos Práticos de Código</h1>
+
+        <!-- HTML Básico -->
+        <section class="example-section">
+            <h2>HTML Básico</h2>
+            <div class="description">
+                Estrutura básica de uma página HTML5 com elementos semânticos
+            </div>
+            <div class="code-block" data-language="HTML">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Minha Página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#inicio"&gt;Início&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section id="inicio"&gt;
+            &lt;h1&gt;Bem-vindo&lt;/h1&gt;
+            &lt;p&gt;Este é um exemplo de página HTML5.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Minha Página&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+        </section>
+
+        <!-- CSS Moderno -->
+        <section class="example-section">
+            <h2>CSS Moderno</h2>
+            <div class="description">
+                Exemplos de CSS moderno com Flexbox, Grid e variáveis CSS
+            </div>
+            <div class="code-block" data-language="CSS">
+<pre>
+/* Variáveis CSS */
+:root {
+    --primary-color: #2563EB;
+    --secondary-color: #10B981;
+    --spacing: 1rem;
+    --max-width: 1200px;
+}
+
+/* Layout com Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing);
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Layout com Flexbox */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--spacing);
+}
+
+/* Card Moderno */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: var(--spacing);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+    }
+}
+</pre>
+            </div>
+        </section>
+
+        <!-- JavaScript Moderno -->
+        <section class="example-section">
+            <h2>JavaScript Moderno</h2>
+            <div class="description">
+                Exemplos de JavaScript moderno com async/await, classes e módulos
+            </div>
+            <div class="code-block" data-language="JavaScript">
+<pre>
+// Módulo de utilidades
+export class GerenciadorTarefas {
+    constructor() {
+        this.tarefas = [];
+    }
+
+    async carregarTarefas() {
+        try {
+            const response = await fetch('api/tarefas');
+            const dados = await response.json();
+            this.tarefas = dados;
+            this.salvarNoCache(dados);
+        } catch (erro) {
+            console.error('Erro ao carregar tarefas:', erro);
+            // Tentar carregar do cache
+            this.tarefas = this.carregarDoCache();
+        }
+    }
+
+    salvarNoCache(dados) {
+        localStorage.setItem('tarefas', JSON.stringify(dados));
+    }
+
+    carregarDoCache() {
+        return JSON.parse(localStorage.getItem('tarefas')) || [];
+    }
+
+    adicionarTarefa(tarefa) {
+        this.tarefas.push({
+            id: Date.now(),
+            ...tarefa,
+            concluida: false
+        });
+        this.salvarNoCache(this.tarefas);
+    }
+}
+
+// Uso do módulo
+import { GerenciadorTarefas } from './gerenciador.js';
+
+const gerenciador = new GerenciadorTarefas();
+
+// Event Listeners Modernos
+document.addEventListener('DOMContentLoaded', async () => {
+    await gerenciador.carregarTarefas();
+    
+    const form = document.querySelector('#formTarefa');
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const dados = new FormData(form);
+        
+        gerenciador.adicionarTarefa({
+            titulo: dados.get('titulo'),
+            descricao: dados.get('descricao')
+        });
+    });
+});
+</pre>
+            </div>
+        </section>
+
+        <!-- API REST -->
+        <section class="example-section">
+            <h2>API REST com Node.js</h2>
+            <div class="description">
+                Exemplo de uma API REST usando Express.js e MongoDB
+            </div>
+            <div class="code-block" data-language="JavaScript">
+<pre>
+const express = require('express');
+const mongoose = require('mongoose');
+const router = express.Router();
+
+// Modelo
+const TarefaSchema = new mongoose.Schema({
+    titulo: { type: String, required: true },
+    descricao: String,
+    concluida: { type: Boolean, default: false },
+    criadaEm: { type: Date, default: Date.now }
+});
+
+const Tarefa = mongoose.model('Tarefa', TarefaSchema);
+
+// Middleware de autenticação
+const autenticar = (req, res, next) => {
+    const token = req.headers.authorization;
+    if (!token) {
+        return res.status(401).json({ erro: 'Token não fornecido' });
+    }
+    // Verificar token...
+    next();
+};
+
+// Rotas
+router.get('/tarefas', autenticar, async (req, res) => {
+    try {
+        const tarefas = await Tarefa.find()
+            .sort({ criadaEm: -1 })
+            .limit(10);
+        res.json(tarefas);
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+});
+
+router.post('/tarefas', autenticar, async (req, res) => {
+    try {
+        const tarefa = new Tarefa(req.body);
+        await tarefa.save();
+        res.status(201).json(tarefa);
+    } catch (erro) {
+        res.status(400).json({ erro: erro.message });
+    }
+});
+
+router.put('/tarefas/:id', autenticar, async (req, res) => {
+    try {
+        const tarefa = await Tarefa.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+        res.json(tarefa);
+    } catch (erro) {
+        res.status(400).json({ erro: erro.message });
+    }
+});
+</pre>
+            </div>
+        </section>
+
+        <!-- Testes -->
+        <section class="example-section">
+            <h2>Testes com Jest</h2>
+            <div class="description">
+                Exemplo de testes unitários e de integração usando Jest
+            </div>
+            <div class="code-block" data-language="JavaScript">
+<pre>
+// utils.test.js
+import { GerenciadorTarefas } from './gerenciador';
+
+describe('GerenciadorTarefas', () => {
+    let gerenciador;
+
+    beforeEach(() => {
+        gerenciador = new GerenciadorTarefas();
+        localStorage.clear();
+    });
+
+    test('deve adicionar uma nova tarefa', () => {
+        const tarefa = {
+            titulo: 'Nova Tarefa',
+            descricao: 'Descrição da tarefa'
+        };
+
+        gerenciador.adicionarTarefa(tarefa);
+        
+        expect(gerenciador.tarefas).toHaveLength(1);
+        expect(gerenciador.tarefas[0]).toMatchObject({
+            titulo: 'Nova Tarefa',
+            descricao: 'Descrição da tarefa',
+            concluida: false
+        });
+    });
+
+    test('deve salvar tarefas no localStorage', () => {
+        const tarefa = {
+            titulo: 'Tarefa para Cache',
+            descricao: 'Teste de cache'
+        };
+
+        gerenciador.adicionarTarefa(tarefa);
+        
+        const cacheTarefas = JSON.parse(
+            localStorage.getItem('tarefas')
+        );
+        
+        expect(cacheTarefas).toHaveLength(1);
+        expect(cacheTarefas[0].titulo).toBe('Tarefa para Cache');
+    });
+
+    test('deve carregar tarefas do cache quando API falha', async () => {
+        // Mock da fetch API falhando
+        global.fetch = jest.fn(() => 
+            Promise.reject('API indisponível')
+        );
+
+        // Preparar dados no cache
+        const tarefasCache = [{
+            id: 1,
+            titulo: 'Tarefa em Cache',
+            concluida: false
+        }];
+        
+        localStorage.setItem(
+            'tarefas',
+            JSON.stringify(tarefasCache)
+        );
+
+        await gerenciador.carregarTarefas();
+        
+        expect(gerenciador.tarefas).toEqual(tarefasCache);
+    });
+});
+</pre>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

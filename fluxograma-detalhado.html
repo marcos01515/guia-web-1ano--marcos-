@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxograma Detalhado de Projeto Web</title>
+    <style>
+        :root {
+            --primary-color: #2563EB;
+            --secondary-color: #10B981;
+            --accent-1: #FF3366;
+            --accent-2: #00F260;
+            --accent-3: #7C4DFF;
+            --accent-4: #FFA726;
+            --text-dark: #111827;
+            --text-light: #F3F4F6;
+            --bg-light: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--text-light);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5em;
+        }
+
+        .phase {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+
+        .phase:nth-child(1)::before { background: var(--accent-1); }
+        .phase:nth-child(2)::before { background: var(--accent-2); }
+        .phase:nth-child(3)::before { background: var(--accent-3); }
+        .phase:nth-child(4)::before { background: var(--accent-4); }
+        .phase:nth-child(5)::before { background: var(--primary-color); }
+        .phase:nth-child(6)::before { background: var(--secondary-color); }
+
+        .phase h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--text-light);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .phase-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-block {
+            background: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        .tool-example {
+            background: #1E1E1E;
+            color: #D4D4D4;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-family: 'Consolas', monospace;
+            overflow-x: auto;
+        }
+
+        .tip {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning {
+            background: rgba(255, 51, 102, 0.1);
+            border-left: 4px solid var(--accent-1);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .phase-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fluxograma Detalhado de Projeto Web</h1>
+
+        <section class="phase">
+            <h2>1. Concepção e Planejamento</h2>
+            <div class="phase-content">
+                <div class="info-block">
+                    <h3>Análise de Requisitos</h3>
+                    <ul class="checklist">
+                        <li>Levantamento de requisitos funcionais</li>
+                        <li>Identificação de requisitos não funcionais</li>
+                        <li>Definição do público-alvo</li>
+                        <li>Análise de concorrência</li>
+                        <li>Definição de objetivos SMART</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>Dica:</strong> Use metodologias ágeis como User Stories para documentar requisitos:
+                        <div class="tool-example">
+                            Como [tipo de usuário]
+                            Eu quero [objetivo]
+                            Para que [benefício]
+                        </div>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>Documentação Inicial</h3>
+                    <ul class="checklist">
+                        <li>Escopo do projeto</li>
+                        <li>Cronograma preliminar</li>
+                        <li>Orçamento estimado</li>
+                        <li>Definição de tecnologias</li>
+                        <li>Análise de riscos</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>Atenção:</strong> Documente todas as decisões e suposições feitas nesta fase.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="phase">
+            <h2>2. Design e Prototipação</h2>
+            <div class="phase-content">
+                <div class="info-block">
+                    <h3>UX Design</h3>
+                    <ul class="checklist">
+                        <li>Pesquisa de usuários</li>
+                        <li>Criação de personas</li>
+                        <li>Mapeamento da jornada do usuário</li>
+                        <li>Arquitetura da informação</li>
+                        <li>Wireframes de baixa fidelidade</li>
+                    </ul>
+                    <div class="tool-example">
+                        Ferramentas recomendadas:
+                        - Figma
+                        - Adobe XD
+                        - Sketch
+                        - Miro (para wireframes)
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>UI Design</h3>
+                    <ul class="checklist">
+                        <li>Design system</li>
+                        <li>Guia de estilos</li>
+                        <li>Protótipos de alta fidelidade</li>
+                        <li>Testes de usabilidade</li>
+                        <li>Validação com stakeholders</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>Design System Base:</strong>
+                        <div class="tool-example">
+                            colors: {
+                primary: '#2563EB',
+                secondary: '#10B981',
+                text: '#111827',
+                background: '#F3F4F6'
+            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="phase">
+            <h2>3. Desenvolvimento</h2>
+            <div class="phase-content">
+                <div class="info-block">
+                    <h3>Front-end</h3>
+                    <ul class="checklist">
+                        <li>Setup do ambiente de desenvolvimento</li>
+                        <li>Implementação da estrutura HTML</li>
+                        <li>Desenvolvimento de componentes</li>
+                        <li>Integração com APIs</li>
+                        <li>Otimização de performance</li>
+                    </ul>
+                    <div class="tool-example">
+                        // Exemplo de componente React
+                        const Button = ({ text, onClick }) => (
+                            &lt;button 
+                                className="btn-primary"
+                                onClick={onClick}
+                            &gt;
+                                {text}
+                            &lt;/button&gt;
+                        );
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>Back-end</h3>
+                    <ul class="checklist">
+                        <li>Arquitetura do servidor</li>
+                        <li>Modelagem do banco de dados</li>
+                        <li>Implementação de APIs</li>
+                        <li>Segurança e autenticação</li>
+                        <li>Cache e otimização</li>
+                    </ul>
+                    <div class="tool-example">
+                        // Exemplo de rota Express
+                        app.get('/api/users', async (req, res) => {
+                            try {
+                                const users = await User.find();
+                                res.json(users);
+                            } catch (err) {
+                                res.status(500).json({ error: err.message });
+                            }
+                        });
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="phase">
+            <h2>4. Testes e Qualidade</h2>
+            <div class="phase-content">
+                <div class="info-block">
+                    <h3>Tipos de Testes</h3>
+                    <ul class="checklist">
+                        <li>Testes unitários</li>
+                        <li>Testes de integração</li>
+                        <li>Testes end-to-end</li>
+                        <li>Testes de usabilidade</li>
+                        <li>Testes de performance</li>
+                    </ul>
+                    <div class="tool-example">
+                        // Exemplo de teste Jest
+                        test('soma números corretamente', () => {
+                            expect(soma(2, 2)).toBe(4);
+                            expect(soma(-1, 1)).toBe(0);
+                        });
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>Garantia de Qualidade</h3>
+                    <ul class="checklist">
+                        <li>Code review</li>
+                        <li>Análise estática de código</li>
+                        <li>Verificação de segurança</li>
+                        <li>Otimização de performance</li>
+                        <li>Documentação</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>Métricas importantes:</strong>
+                        - Cobertura de testes
+                        - Tempo de carregamento
+                        - Score Lighthouse
+                        - Vulnerabilidades
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="phase">
+            <h2>5. Deploy e Lançamento</h2>
+            <div class="phase-content">
+                <div class="info-block">
+                    <h3>Preparação para Produção</h3>
+                    <ul class="checklist">
+                        <li>Configuração de ambiente</li>
+                        <li>SSL/TLS e segurança</li>
+                        <li>CDN e otimização</li>
+                        <li>Backups e recuperação</li>
+                        <li>Monitoramento</li>
+                    </ul>
+                    <div class="tool-example">
+                        # Exemplo Docker Compose
+                        version: '3'
+                        services:
+                          app:
+                            build: .
+                            ports:
+                              - "3000:3000"
+                          db:
+                            image: mongodb
+                            volumes:
+                              - dbdata:/data/db
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>Checklist de Lançamento</h3>
+                    <ul class="checklist">
+                        <li>Testes finais em produção</li>
+                        <li>Verificação de DNS</li>
+                        <li>Configuração de analytics</li>
+                        <li>Plano de rollback</li>
+                        <li>Documentação de deploy</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>Pipeline CI/CD Básico:</strong>
+                        Build → Test → Deploy → Monitor
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="phase">
+            <h2>6. Manutenção e Evolução</h2>
+            <div class="phase-content">
+                <div class="info-block">
+                    <h3>Monitoramento Contínuo</h3>
+                    <ul class="checklist">
+                        <li>Monitoramento de erros</li>
+                        <li>Análise de métricas</li>
+                        <li>Feedback dos usuários</li>
+                        <li>Performance e uptime</li>
+                        <li>Segurança contínua</li>
+                    </ul>
+                    <div class="tool-example">
+                        // Exemplo de logging
+                        logger.info({
+                            event: 'user_action',
+                            userId: user.id,
+                            action: 'login',
+                            timestamp: new Date()
+                        });
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3>Planejamento de Evolução</h3>
+                    <ul class="checklist">
+                        <li>Roadmap de features</li>
+                        <li>Atualizações de segurança</li>
+                        <li>Otimizações de performance</li>
+                        <li>Refatoração de código</li>
+                        <li>Documentação atualizada</li>
+                    </ul>
+                    <div class="warning">
+                        <strong>Ciclo de Melhoria Contínua:</strong>
+                        Monitorar → Analisar → Planejar → Implementar
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -60,38 +60,111 @@
 <body>
     <div class="welcome-box">
         <div class="robot">
-            <svg width="200" height="200" viewBox="0 0 200 200">
-                <!-- Corpo do robô -->
-                <rect x="60" y="80" width="80" height="80" rx="10" fill="#4285f4" class="body">
-                    <animate attributeName="y" values="85;80;85" dur="2s" repeatCount="indefinite"/>
+            <svg width="300" height="400" viewBox="0 0 300 400">
+                <!-- Plataforma flutuante -->
+                <ellipse cx="150" cy="350" rx="100" ry="20" fill="#2C5282" opacity="0.5">
+                    <animate attributeName="ry" values="20;18;20" dur="2s" repeatCount="indefinite"/>
+                </ellipse>
+                
+                <!-- Pernas -->
+                <g class="legs">
+                    <path d="M120,280 L100,340 L120,340 Z" fill="#4285f4">
+                        <animate attributeName="d" values="M120,280 L100,340 L120,340 Z;M120,280 L110,340 L120,340 Z;M120,280 L100,340 L120,340 Z" dur="1s" repeatCount="indefinite"/>
+                    </path>
+                    <path d="M180,280 L200,340 L180,340 Z" fill="#4285f4">
+                        <animate attributeName="d" values="M180,280 L200,340 L180,340 Z;M180,280 L190,340 L180,340 Z;M180,280 L200,340 L180,340 Z" dur="1s" repeatCount="indefinite"/>
+                    </path>
+                </g>
+
+                <!-- Corpo principal -->
+                <rect x="100" y="180" width="100" height="120" rx="20" fill="#4285f4" class="body">
+                    <animate attributeName="y" values="185;180;185" dur="2s" repeatCount="indefinite"/>
                 </rect>
+
+                <!-- Painel do peito -->
+                <rect x="120" y="200" width="60" height="40" rx="5" fill="#185ABC" class="chest-panel">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite"/>
+                </rect>
+                <circle cx="150" cy="220" r="10" fill="#00FF88" class="core">
+                    <animate attributeName="r" values="10;8;10" dur="1s" repeatCount="indefinite"/>
+                </circle>
+
                 <!-- Cabeça -->
-                <rect x="70" y="40" width="60" height="50" rx="5" fill="#4285f4" class="head">
-                    <animate attributeName="y" values="45;40;45" dur="2s" repeatCount="indefinite"/>
-                </rect>
-                <!-- Olhos -->
-                <circle cx="90" cy="60" r="5" fill="white" class="eye">
-                    <animate attributeName="cy" values="65;60;65" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="110" cy="60" r="5" fill="white" class="eye">
-                    <animate attributeName="cy" values="65;60;65" dur="2s" repeatCount="indefinite"/>
-                </circle>
+                <g class="head">
+                    <rect x="110" y="100" width="80" height="70" rx="15" fill="#4285f4">
+                        <animate attributeName="y" values="105;100;105" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+                    
+                    <!-- Visor -->
+                    <rect x="120" y="120" width="60" height="25" rx="5" fill="#185ABC">
+                        <animate attributeName="y" values="125;120;125" dur="2s" repeatCount="indefinite"/>
+                    </rect>
+                    
+                    <!-- Olhos -->
+                    <g class="eyes">
+                        <circle cx="135" cy="135" r="8" fill="#00FF88" class="eye">
+                            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="165" cy="135" r="8" fill="#00FF88" class="eye">
+                            <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                </g>
+
                 <!-- Antenas -->
-                <line x1="80" y1="40" x2="70" y2="20" stroke="#4285f4" stroke-width="3" class="antenna">
-                    <animate attributeName="y1" values="45;40;45" dur="2s" repeatCount="indefinite"/>
-                    <animate attributeName="y2" values="25;20;25" dur="2s" repeatCount="indefinite"/>
-                </line>
-                <line x1="120" y1="40" x2="130" y2="20" stroke="#4285f4" stroke-width="3" class="antenna">
-                    <animate attributeName="y1" values="45;40;45" dur="2s" repeatCount="indefinite"/>
-                    <animate attributeName="y2" values="25;20;25" dur="2s" repeatCount="indefinite"/>
-                </line>
+                <g class="antennas">
+                    <line x1="120" y1="100" x2="100" y2="60" stroke="#4285f4" stroke-width="4">
+                        <animate attributeName="x2" values="95;100;95" dur="2s" repeatCount="indefinite"/>
+                    </line>
+                    <circle cx="100" cy="60" r="5" fill="#00FF88">
+                        <animate attributeName="r" values="5;4;5" dur="1s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <line x1="180" y1="100" x2="200" y2="60" stroke="#4285f4" stroke-width="4">
+                        <animate attributeName="x2" values="205;200;205" dur="2s" repeatCount="indefinite"/>
+                    </line>
+                    <circle cx="200" cy="60" r="5" fill="#00FF88">
+                        <animate attributeName="r" values="5;4;5" dur="1s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
                 <!-- Braços -->
-                <line x1="60" y1="100" x2="40" y2="120" stroke="#4285f4" stroke-width="8" class="arm">
-                    <animate attributeName="x2" values="35;40;35" dur="3s" repeatCount="indefinite"/>
-                </line>
-                <line x1="140" y1="100" x2="160" y2="120" stroke="#4285f4" stroke-width="8" class="arm">
-                    <animate attributeName="x2" values="165;160;165" dur="3s" repeatCount="indefinite"/>
-                </line>
+                <g class="arms">
+                    <!-- Braço esquerdo -->
+                    <g class="left-arm">
+                        <line x1="100" y1="200" x2="60" y2="220" stroke="#4285f4" stroke-width="12" stroke-linecap="round">
+                            <animate attributeName="x2" values="55;60;55" dur="3s" repeatCount="indefinite"/>
+                        </line>
+                        <circle cx="60" cy="220" r="10" fill="#185ABC">
+                            <animate attributeName="cx" values="55;60;55" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Braço direito -->
+                    <g class="right-arm">
+                        <line x1="200" y1="200" x2="240" y2="220" stroke="#4285f4" stroke-width="12" stroke-linecap="round">
+                            <animate attributeName="x2" values="245;240;245" dur="3s" repeatCount="indefinite"/>
+                        </line>
+                        <circle cx="240" cy="220" r="10" fill="#185ABC">
+                            <animate attributeName="cx" values="245;240;245" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                </g>
+
+                <!-- Efeitos de energia -->
+                <g class="energy-effects">
+                    <circle cx="150" cy="350" r="40" fill="url(#energyGradient)" opacity="0.3">
+                        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+                
+                <!-- Gradientes -->
+                <defs>
+                    <radialGradient id="energyGradient">
+                        <stop offset="0%" stop-color="#00FF88"/>
+                        <stop offset="100%" stop-color="#4285f4" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
             </svg>
         </div>
         <h1>Guia Web</h1>
@@ -100,21 +173,37 @@
     <style>
         .robot {
             margin-bottom: 30px;
-            filter: drop-shadow(0 0 10px rgba(66,133,244,0.3));
+            filter: drop-shadow(0 0 20px rgba(66,133,244,0.4));
         }
         .robot svg {
             transform-origin: center;
-            animation: float 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
         }
         .head, .body, .arm, .antenna {
             transition: all 0.3s ease;
         }
         .welcome-box:hover .robot svg {
             transform: scale(1.05);
+            filter: drop-shadow(0 0 25px rgba(0,255,136,0.4));
+        }
+        .welcome-box:hover .robot .core,
+        .welcome-box:hover .robot .eye {
+            fill: #00FF88;
+            filter: drop-shadow(0 0 5px rgba(0,255,136,0.8));
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        .robot .core {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .robot .energy-effects circle {
+            mix-blend-mode: screen;
         }
     </style>
 </body>

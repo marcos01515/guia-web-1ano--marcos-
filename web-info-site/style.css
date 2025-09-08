@@ -6,6 +6,10 @@
     --background-light: #F3F4F6;
     --border-color: #E5E7EB;
     --light-color: #ffffff;
+    --accent-1: #FF3366;
+    --accent-2: #00F260;
+    --accent-3: #7C4DFF;
+    --accent-4: #FFA726;
 }
 
 body {
@@ -444,6 +448,155 @@ li:hover::before {
     animation: pulse 2s infinite;
 }
 
+/* Estilos para os blocos de tópicos */
+.topic-block {
+    background: var(--light-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.topic-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.topic-block h3 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
+
+.topic-block h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: currentColor;
+}
+
+.topic-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.topic-block ul ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.topic-block li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.topic-block li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.topic-block strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Estilos específicos para seções */
+section:nth-child(1) .topic-block h3 {
+    color: var(--accent-1);
+}
+
+section:nth-child(2) .topic-block h3 {
+    color: var(--accent-2);
+}
+
+section:nth-child(3) .topic-block h3 {
+    color: var(--accent-3);
+}
+
+section:nth-child(4) .topic-block h3 {
+    color: var(--accent-4);
+}
+
+/* Guia de seleção */
+.selection-guide {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(16, 185, 129, 0.1));
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.selection-guide h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+.selection-guide ol {
+    padding-left: 2rem;
+}
+
+.selection-guide li {
+    margin-bottom: 1rem;
+}
+
+/* Diagrama de fluxo de trabalho */
+.workflow-diagram {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.workflow-diagram img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.diagram-caption {
+    margin-top: 1rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/* Nota de integração */
+.integration-note {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(255, 51, 102, 0.1));
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.integration-note h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.integration-note p {
+    margin: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.integration-note p::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
 /* Efeito de hover nos cards de seção */
 section {
     position: relative;
@@ -465,3 +618,60 @@ section::after {
 section:hover::after {
     opacity: 1;
 }
+
+/* Animações para os blocos de tópicos */
+.topic-block {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.topic-block:nth-child(1) { animation-delay: 0.1s; }
+.topic-block:nth-child(2) { animation-delay: 0.2s; }
+.topic-block:nth-child(3) { animation-delay: 0.3s; }
+.topic-block:nth-child(4) { animation-delay: 0.4s; }
+.topic-block:nth-child(5) { animation-delay: 0.5s; }
+
+/* Estilos para blocos de código */
+.code-example {
+    background: #1E1E1E;
+    color: #D4D4D4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    overflow-x: auto;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.code-example::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    border-radius: 0 8px 0 8px;
+    background: rgba(255,255,255,0.1);
+}
+
+.code-example.html::before { background: var(--accent-1); }
+.code-example.css::before { background: var(--accent-2); }
+.code-example.js::before { background: var(--accent-3); }
+
+.code-example code {
+    display: block;
+    white-space: pre;
+}
+
+.code-example .comment { color: #6A9955; }
+.code-example .keyword { color: #C586C0; }
+.code-example .string { color: #CE9178; }
+.code-example .function { color: #DCDCAA; }
+.code-example .tag { color: #569CD6; }
+.code-example .attribute { color: #9CDCFE; }
+.code-example .operator { color: #D4D4D4; }
+.code-example .number { color: #B5CEA8; }
+.code-example .property { color: #9CDCFE; }

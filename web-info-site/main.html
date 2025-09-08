@@ -81,47 +81,833 @@
         <main>
             <section id="html-css-js">
                 <h2>1. O que são HTML, CSS e JavaScript?</h2>
-                <ul>
-                    <li><strong>HTML</strong>: Linguagem de marcação usada para estruturar o conteúdo de páginas web.</li>
-                    <li><strong>CSS</strong>: Linguagem de estilos utilizada para definir a aparência visual do conteúdo HTML.</li>
-                    <li><strong>JavaScript</strong>: Linguagem de programação que permite criar interatividade e dinamicidade nas páginas web.</li>
-                </ul>
-                <p><em>Papel de cada um:</em> HTML constrói a base, CSS estiliza, JavaScript traz funcionalidades.</p>
+                
+                <div class="topic-block">
+                    <h3>HTML (HyperText Markup Language)</h3>
+                    <ul>
+                        <li><strong>Função Principal</strong>: Estruturação do conteúdo web</li>
+                        <li><strong>Elementos Fundamentais</strong>:
+                            <ul>
+                                <li>Tags semânticas: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt;</li>
+                                <li>Tags de conteúdo: &lt;h1&gt; a &lt;h6&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;table&gt;</li>
+                                <li>Tags de mídia: &lt;img&gt;, &lt;video&gt;, &lt;audio&gt;</li>
+                            </ul>
+                        </li>
+                        <li><strong>Versão Atual</strong>: HTML5 com suporte a recursos modernos como canvas, SVG e APIs web</li>
+                    </ul>
+                    
+                    <div class="code-example html" data-language="HTML">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemplo de HTML Semântico&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Estrutura semântica básica --&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Título Principal&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Início&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Artigo Principal&lt;/h2&gt;
+            &lt;section&gt;
+                &lt;h3&gt;Seção do Artigo&lt;/h3&gt;
+                &lt;p&gt;Conteúdo da seção...&lt;/p&gt;
+                
+                &lt;!-- Exemplo de mídia --&gt;
+                &lt;img src="exemplo.jpg" alt="Descrição da imagem"&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 Exemplo de Site&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <h3>CSS (Cascading Style Sheets)</h3>
+                    <ul>
+                        <li><strong>Função Principal</strong>: Estilização e layout</li>
+                        <li><strong>Recursos Modernos</strong>:
+                            <ul>
+                                <li>Flexbox: Para layouts unidimensionais</li>
+                                <li>Grid: Para layouts bidimensionais</li>
+                                <li>Animações e Transições</li>
+                                <li>Media Queries: Para design responsivo</li>
+                            </ul>
+                        </li>
+                        <li><strong>Metodologias</strong>: BEM, SMACSS, OOCSS para organização do código</li>
+                        <li><strong>Pré-processadores</strong>: Sass, Less, Stylus para código mais manutenível</li>
+                    </ul>
+
+                    <div class="code-example css" data-language="CSS">
+<code>/* Variáveis CSS */
+:root {
+    --primary-color: #2563EB;
+    --secondary-color: #10B981;
+    --spacing: 1rem;
+}
+
+/* Layout com Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+/* Layout com Flexbox */
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Animações e Transições */
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Design Responsivo */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+    }
+}
+
+/* Exemplo de metodologia BEM */
+.block {}
+.block__element {}
+.block--modifier {}</code>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <h3>JavaScript</h3>
+                    <ul>
+                        <li><strong>Função Principal</strong>: Interatividade e funcionalidade dinâmica</li>
+                        <li><strong>Recursos Essenciais</strong>:
+                            <ul>
+                                <li>Manipulação do DOM</li>
+                                <li>Eventos e Callbacks</li>
+                                <li>Promises e Async/Await</li>
+                                <li>APIs modernas (Fetch, localStorage, WebSockets)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Frameworks Populares</strong>: React, Vue.js, Angular</li>
+                        <li><strong>Runtime</strong>: Node.js para desenvolvimento backend</li>
+                    </ul>
+
+                    <div class="code-example js" data-language="JavaScript">
+<code>// Manipulação do DOM
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('#meuBotao');
+    const content = document.querySelector('.content');
+
+    // Eventos e Callbacks
+    button.addEventListener('click', () => {
+        content.classList.toggle('visible');
+    });
+
+    // Promises e Async/Await
+    async function carregarDados() {
+        try {
+            // Usando Fetch API
+            const response = await fetch('https://api.exemplo.com/dados');
+            const dados = await response.json();
+            
+            // Armazenamento Local
+            localStorage.setItem('dados', JSON.stringify(dados));
+            
+            return dados;
+        } catch (erro) {
+            console.error('Erro ao carregar dados:', erro);
+        }
+    }
+
+    // Classes modernas
+    class ComponenteInterativo {
+        constructor(elemento) {
+            this.elemento = elemento;
+            this.estado = {
+                contador: 0
+            };
+        }
+
+        incrementar() {
+            this.estado.contador++;
+            this.atualizar();
+        }
+
+        atualizar() {
+            this.elemento.textContent = this.estado.contador;
+        }
+    }
+
+    // Exemplo de uso de módulos
+    import { formatarData } from './utilidades.js';
+    
+    // Exemplo de desestruturação e arrow functions
+    const { nome, idade } = usuario;
+    const maioridade = idade >= 18 ? 'Sim' : 'Não';
+});</code>
+                    </div>
+                </div>
+
+                <div class="integration-note">
+                    <h4>Como Trabalham Juntos</h4>
+                    <p>1. HTML fornece a estrutura base e o conteúdo</p>
+                    <p>2. CSS transforma essa estrutura em um design atraente e responsivo</p>
+                    <p>3. JavaScript adiciona comportamento dinâmico e interatividade</p>
+                    <p>Este trio forma a base do desenvolvimento web moderno, permitindo criar desde simples páginas até aplicações web complexas.</p>
+                </div>
             </section>
             <section id="boas-praticas">
                 <h2>2. Boas práticas profissionais</h2>
-                <ul>
-                    <li><strong>Acessibilidade</strong>: Tornar o site utilizável por todos, incluindo pessoas com deficiência.</li>
-                    <li><strong>Semântica</strong>: Utilizar tags HTML apropriadas para dar significado ao conteúdo.</li>
-                    <li><strong>Responsividade</strong>: Garantir que o site funcione bem em diferentes dispositivos e tamanhos de tela.</li>
-                    <li><strong>Organização</strong>: Manter o código e os arquivos bem estruturados e documentados.</li>
-                    <li><strong>Versionamento</strong>: Utilizar sistemas como Git para controlar alterações e colaborar em equipe.</li>
-                </ul>
+                
+                <div class="topic-block">
+                    <h3>Acessibilidade Web</h3>
+                    <ul>
+                        <li><strong>Princípios WCAG</strong>:
+                            <ul>
+                                <li>Perceptível: Informações visíveis para todos os sentidos</li>
+                                <li>Operável: Interface funcional para diferentes formas de interação</li>
+                                <li>Compreensível: Conteúdo claro e previsível</li>
+                                <li>Robusto: Compatível com tecnologias assistivas</li>
+                            </ul>
+                        </li>
+                        <li><strong>Implementações Práticas</strong>:
+                            <ul>
+                                <li>Textos alternativos para imagens</li>
+                                <li>Contraste adequado de cores</li>
+                                <li>Navegação por teclado</li>
+                                <li>Legendas em vídeos</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Código Limpo e Manutenção</h3>
+                    <ul>
+                        <li><strong>Organização de Arquivos</strong>:
+                            <ul>
+                                <li>Estrutura de pastas clara (assets, components, styles)</li>
+                                <li>Nomenclatura consistente</li>
+                                <li>Separação de responsabilidades</li>
+                            </ul>
+                        </li>
+                        <li><strong>Documentação</strong>:
+                            <ul>
+                                <li>Comentários explicativos</li>
+                                <li>README detalhado</li>
+                                <li>Documentação de API</li>
+                                <li>Guia de estilo do código</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Design Responsivo</h3>
+                    <ul>
+                        <li><strong>Técnicas Principais</strong>:
+                            <ul>
+                                <li>Mobile-first design</li>
+                                <li>Breakpoints estratégicos</li>
+                                <li>Imagens flexíveis</li>
+                                <li>Typography responsiva</li>
+                            </ul>
+                        </li>
+                        <li><strong>Testes</strong>:
+                            <ul>
+                                <li>Múltiplos dispositivos</li>
+                                <li>Diferentes navegadores</li>
+                                <li>Velocidades de conexão variadas</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Controle de Versão</h3>
+                    <ul>
+                        <li><strong>Práticas com Git</strong>:
+                            <ul>
+                                <li>Commits semânticos</li>
+                                <li>Branches organizados (main, develop, feature)</li>
+                                <li>Code review</li>
+                                <li>Resolução de conflitos</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fluxo de Trabalho</strong>:
+                            <ul>
+                                <li>GitFlow ou Trunk-Based Development</li>
+                                <li>Pull requests</li>
+                                <li>Integração contínua</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Performance</h3>
+                    <ul>
+                        <li><strong>Otimizações</strong>:
+                            <ul>
+                                <li>Minificação de código</li>
+                                <li>Compressão de imagens</li>
+                                <li>Lazy loading</li>
+                                <li>Caching eficiente</li>
+                            </ul>
+                        </li>
+                        <li><strong>Métricas</strong>:
+                            <ul>
+                                <li>Core Web Vitals</li>
+                                <li>Tempo de carregamento</li>
+                                <li>Performance Score</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </section>
             <section id="panorama">
                 <h2>3. Panorama de tecnologias web</h2>
-                <ul>
-                    <li><strong>Front-end</strong>: Interface do usuário (HTML, CSS, JavaScript, frameworks como React, Vue).</li>
-                    <li><strong>Back-end</strong>: Lógica de negócio e acesso a dados (Node.js, Python, Java, PHP).</li>
-                    <li><strong>Bancos de dados</strong>: Armazenamento de informações (MySQL, MongoDB, PostgreSQL).</li>
-                    <li><strong>DevOps</strong>: Automação de deploy, integração contínua, infraestrutura (Docker, CI/CD).</li>
-                    <li><strong>Testes</strong>: Garantia de qualidade (Jest, Mocha, Selenium).</li>
-                </ul>
-                <p>Como escolher? Avalie requisitos do projeto, equipe, escalabilidade e comunidade das tecnologias.</p>
+                
+                <div class="topic-block">
+                    <h3>Front-end Moderno</h3>
+                    <ul>
+                        <li><strong>Frameworks JavaScript</strong>:
+                            <ul>
+                                <li>React: Biblioteca para UI com grande ecossistema</li>
+                                <li>Vue.js: Framework progressivo e intuitivo</li>
+                                <li>Angular: Framework completo da Google</li>
+                                <li>Svelte: Compilador para código eficiente</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ferramentas de Build</strong>:
+                            <ul>
+                                <li>Vite: Build tool rápida e moderna</li>
+                                <li>Webpack: Bundler configurável</li>
+                                <li>TypeScript: JavaScript tipado</li>
+                            </ul>
+                        </li>
+                        <li><strong>CSS Moderno</strong>:
+                            <ul>
+                                <li>Tailwind CSS: Utility-first framework</li>
+                                <li>CSS-in-JS: Styled-components, Emotion</li>
+                                <li>CSS Modules: Escopos locais</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Back-end e APIs</h3>
+                    <ul>
+                        <li><strong>Tecnologias Server-side</strong>:
+                            <ul>
+                                <li>Node.js: JavaScript no servidor</li>
+                                <li>Python: Django, FastAPI</li>
+                                <li>Java: Spring Boot</li>
+                                <li>PHP: Laravel, Symfony</li>
+                                <li>Go: Performance e concorrência</li>
+                            </ul>
+                        </li>
+                        <li><strong>Arquiteturas</strong>:
+                            <ul>
+                                <li>RESTful APIs</li>
+                                <li>GraphQL</li>
+                                <li>Microserviços</li>
+                                <li>Serverless</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="code-example js" data-language="Node.js/Express">
+<code>// Exemplo de API RESTful com Express
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+// Middleware de autenticação
+const autenticar = (req, res, next) => {
+    const token = req.headers.authorization;
+    if (!token) return res.status(401).json({ erro: 'Token não fornecido' });
+    // Verificação do token...
+    next();
+};
+
+// Rotas da API
+app.get('/api/usuarios', autenticar, async (req, res) => {
+    try {
+        const usuarios = await Usuario.find();
+        res.json(usuarios);
+    } catch (erro) {
+        res.status(500).json({ erro: 'Erro ao buscar usuários' });
+    }
+});
+
+app.post('/api/usuarios', autenticar, async (req, res) => {
+    try {
+        const novoUsuario = new Usuario(req.body);
+        await novoUsuario.save();
+        res.status(201).json(novoUsuario);
+    } catch (erro) {
+        res.status(400).json({ erro: 'Erro ao criar usuário' });
+    }
+});</code>
+                    </div>
+
+                    <div class="code-example python" data-language="Python/FastAPI">
+<code>from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import List
+
+app = FastAPI()
+
+class Usuario(BaseModel):
+    nome: str
+    email: str
+    idade: int
+
+@app.get("/usuarios/", response_model=List[Usuario])
+async def listar_usuarios():
+    try:
+        usuarios = await database.fetch_all(query)
+        return usuarios
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/usuarios/", response_model=Usuario)
+async def criar_usuario(usuario: Usuario):
+    try:
+        query = usuarios.insert().values(**usuario.dict())
+        usuario_id = await database.execute(query)
+        return {**usuario.dict(), "id": usuario_id}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))</code>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Bancos de Dados</h3>
+                    <ul>
+                        <li><strong>Relacionais (SQL)</strong>:
+                            <ul>
+                                <li>PostgreSQL: Robusto e extensível</li>
+                                <li>MySQL: Popular e confiável</li>
+                                <li>SQLite: Leve e embutido</li>
+                            </ul>
+                        </li>
+                        <li><strong>NoSQL</strong>:
+                            <ul>
+                                <li>MongoDB: Documentos JSON</li>
+                                <li>Redis: Cache em memória</li>
+                                <li>Cassandra: Dados distribuídos</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="code-example sql" data-language="SQL">
+<code>-- Exemplo de SQL Relacional
+-- Criação de tabelas
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    usuario_id INTEGER REFERENCES usuarios(id),
+    titulo VARCHAR(200) NOT NULL,
+    conteudo TEXT,
+    publicado BOOLEAN DEFAULT false
+);
+
+-- Consultas comuns
+-- Buscar todos os posts de um usuário
+SELECT u.nome, p.titulo, p.conteudo
+FROM usuarios u
+JOIN posts p ON u.id = p.usuario_id
+WHERE u.id = 1;
+
+-- Inserir dados
+INSERT INTO usuarios (nome, email) 
+VALUES ('João Silva', 'joao@email.com');</code>
+                    </div>
+
+                    <div class="code-example js" data-language="MongoDB">
+<code>// Exemplo MongoDB
+// Definição de Schema
+const usuarioSchema = new Schema({
+    nome: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    posts: [{
+        titulo: String,
+        conteudo: String,
+        publicado: { type: Boolean, default: false },
+        criadoEm: { type: Date, default: Date.now }
+    }]
+});
+
+// Consultas
+// Buscar usuários com posts
+db.usuarios.aggregate([
+    {
+        $match: {
+            "posts.publicado": true
+        }
+    },
+    {
+        $project: {
+            nome: 1,
+            "posts.titulo": 1,
+            "posts.criadoEm": 1
+        }
+    }
+]);</code>
+                    </div>
+
+                    <div class="code-example js" data-language="Redis">
+<code>// Exemplo Redis
+// Armazenamento em cache
+await redis.set('usuario:1', JSON.stringify({
+    id: 1,
+    nome: 'João',
+    email: 'joao@email.com'
+}), 'EX', 3600); // Expira em 1 hora
+
+// Recuperação do cache
+const usuarioCache = await redis.get('usuario:1');
+if (usuarioCache) {
+    return JSON.parse(usuarioCache);
+} else {
+    // Buscar do banco principal
+    const usuario = await Usuario.findById(1);
+    // Atualizar cache
+    await redis.set('usuario:1', JSON.stringify(usuario));
+    return usuario;
+}</code>
+                    </div>
+                </div>
+
+                <div class="topic-block">
+                    <h3>DevOps e Infraestrutura</h3>
+                    <ul>
+                        <li><strong>Containerização</strong>:
+                            <ul>
+                                <li>Docker: Containers isolados</li>
+                                <li>Kubernetes: Orquestração</li>
+                            </ul>
+                        </li>
+                        <li><strong>CI/CD</strong>:
+                            <ul>
+                                <li>GitHub Actions</li>
+                                <li>Jenkins</li>
+                                <li>GitLab CI</li>
+                            </ul>
+                        </li>
+                        <li><strong>Cloud</strong>:
+                            <ul>
+                                <li>AWS: Líder do mercado</li>
+                                <li>Azure: Integração Microsoft</li>
+                                <li>Google Cloud: IA e ML</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>Testes e Qualidade</h3>
+                    <ul>
+                        <li><strong>Tipos de Testes</strong>:
+                            <ul>
+                                <li>Unitários: Jest, Mocha</li>
+                                <li>Integração: Cypress</li>
+                                <li>E2E: Selenium, Playwright</li>
+                                <li>Performance: Lighthouse, WebPageTest</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ferramentas de Qualidade</strong>:
+                            <ul>
+                                <li>ESLint: Análise estática</li>
+                                <li>Prettier: Formatação</li>
+                                <li>SonarQube: Qualidade de código</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="code-example js" data-language="Jest (Testes Unitários)">
+<code>// Exemplo de testes unitários com Jest
+import { calcularTotal, validarEmail } from './utils';
+
+describe('Funções de utilidade', () => {
+    test('calcularTotal deve somar corretamente com desconto', () => {
+        const itens = [
+            { preco: 100, quantidade: 2 },
+            { preco: 50, quantidade: 1 }
+        ];
+        const desconto = 10; // 10%
+        
+        expect(calcularTotal(itens, desconto)).toBe(225);
+    });
+
+    test('validarEmail deve verificar formato correto', () => {
+        expect(validarEmail('usuario@dominio.com')).toBe(true);
+        expect(validarEmail('email.invalido')).toBe(false);
+    });
+});</code>
+                    </div>
+
+                    <div class="code-example js" data-language="Cypress (Testes E2E)">
+<code>// Exemplo de teste E2E com Cypress
+describe('Fluxo de Login', () => {
+    beforeEach(() => {
+        cy.visit('/login');
+    });
+
+    it('deve fazer login com sucesso', () => {
+        cy.get('[data-cy=email]')
+            .type('usuario@exemplo.com');
+        
+        cy.get('[data-cy=senha]')
+            .type('senha123');
+        
+        cy.get('[data-cy=btn-login]')
+            .click();
+        
+        cy.url().should('include', '/dashboard');
+        cy.get('[data-cy=bem-vindo]')
+            .should('contain', 'Bem-vindo');
+    });
+
+    it('deve mostrar erro com credenciais inválidas', () => {
+        cy.get('[data-cy=email]')
+            .type('invalido@exemplo.com');
+        
+        cy.get('[data-cy=senha]')
+            .type('senha-errada');
+        
+        cy.get('[data-cy=btn-login]')
+            .click();
+        
+        cy.get('[data-cy=erro-login]')
+            .should('be.visible')
+            .and('contain', 'Credenciais inválidas');
+    });
+});</code>
+                    </div>
+
+                    <div class="code-example json" data-language="ESLint Configuration">
+<code>{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "no-console": "warn",
+        "prefer-const": "error",
+        "react/prop-types": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}</code>
+                    </div>
+                </div>
+
+                <div class="selection-guide">
+                    <h4>Como Escolher Tecnologias?</h4>
+                    <ol>
+                        <li><strong>Requisitos do Projeto</strong>: Escala, complexidade, prazo</li>
+                        <li><strong>Equipe</strong>: Experiência, curva de aprendizado</li>
+                        <li><strong>Ecossistema</strong>: Bibliotecas, suporte, comunidade</li>
+                        <li><strong>Manutenção</strong>: Longevidade, atualizações</li>
+                        <li><strong>Recursos</strong>: Orçamento, infraestrutura</li>
+                    </ol>
+                </div>
             </section>
             <section id="fluxograma">
                 <h2>4. Fluxograma de um projeto web completo</h2>
-                <ol>
-                    <li>Ideia e planejamento</li>
-                    <li>Prototipação e design</li>
-                    <li>Desenvolvimento front-end</li>
-                    <li>Desenvolvimento back-end</li>
-                    <li>Integração com banco de dados</li>
-                    <li>Testes</li>
-                    <li>Deploy (publicação)</li>
-                    <li>Manutenção e evolução</li>
-                </ol>
-                <img src="fluxograma.png" alt="Fluxograma de Projeto Web" style="max-width:100%;height:auto;">
+                
+                <div class="topic-block">
+                    <h3>1. Concepção e Planejamento</h3>
+                    <ul>
+                        <li><strong>Análise de Requisitos</strong>:
+                            <ul>
+                                <li>Objetivos do projeto</li>
+                                <li>Público-alvo</li>
+                                <li>Funcionalidades necessárias</li>
+                                <li>Restrições técnicas</li>
+                            </ul>
+                        </li>
+                        <li><strong>Planejamento</strong>:
+                            <ul>
+                                <li>Cronograma</li>
+                                <li>Recursos necessários</li>
+                                <li>Orçamento</li>
+                                <li>Equipe</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>2. Design e Prototipação</h3>
+                    <ul>
+                        <li><strong>UX Design</strong>:
+                            <ul>
+                                <li>Pesquisa de usuários</li>
+                                <li>Jornadas do usuário</li>
+                                <li>Arquitetura da informação</li>
+                                <li>Wireframes</li>
+                            </ul>
+                        </li>
+                        <li><strong>UI Design</strong>:
+                            <ul>
+                                <li>Design system</li>
+                                <li>Protótipos interativos</li>
+                                <li>Guia de estilos</li>
+                                <li>Assets visuais</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>3. Desenvolvimento</h3>
+                    <ul>
+                        <li><strong>Front-end</strong>:
+                            <ul>
+                                <li>Estruturação HTML</li>
+                                <li>Estilização CSS</li>
+                                <li>Interatividade JavaScript</li>
+                                <li>Integração com APIs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Back-end</strong>:
+                            <ul>
+                                <li>Arquitetura do servidor</li>
+                                <li>APIs e endpoints</li>
+                                <li>Lógica de negócio</li>
+                                <li>Segurança</li>
+                            </ul>
+                        </li>
+                        <li><strong>Banco de Dados</strong>:
+                            <ul>
+                                <li>Modelagem de dados</li>
+                                <li>Queries e otimização</li>
+                                <li>Backup e recuperação</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>4. Testes e Qualidade</h3>
+                    <ul>
+                        <li><strong>Tipos de Testes</strong>:
+                            <ul>
+                                <li>Testes unitários</li>
+                                <li>Testes de integração</li>
+                                <li>Testes de usabilidade</li>
+                                <li>Testes de performance</li>
+                            </ul>
+                        </li>
+                        <li><strong>Qualidade</strong>:
+                            <ul>
+                                <li>Code review</li>
+                                <li>Análise de segurança</li>
+                                <li>Otimização de performance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>5. Deploy e Lançamento</h3>
+                    <ul>
+                        <li><strong>Preparação</strong>:
+                            <ul>
+                                <li>Configuração de ambiente</li>
+                                <li>Domínio e SSL</li>
+                                <li>CDN e cache</li>
+                            </ul>
+                        </li>
+                        <li><strong>Monitoramento</strong>:
+                            <ul>
+                                <li>Logs e métricas</li>
+                                <li>Alertas</li>
+                                <li>Analytics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="topic-block">
+                    <h3>6. Manutenção e Evolução</h3>
+                    <ul>
+                        <li><strong>Manutenção</strong>:
+                            <ul>
+                                <li>Correção de bugs</li>
+                                <li>Atualizações de segurança</li>
+                                <li>Backup e recuperação</li>
+                            </ul>
+                        </li>
+                        <li><strong>Evolução</strong>:
+                            <ul>
+                                <li>Novas funcionalidades</li>
+                                <li>Otimizações</li>
+                                <li>Feedback dos usuários</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="workflow-diagram">
+                    <img src="fluxograma.png" alt="Fluxograma de Projeto Web" style="max-width:100%;height:auto;">
+                    <p class="diagram-caption">Fluxo de trabalho completo do desenvolvimento web moderno</p>
+                </div>
             </section>
         </main>
         <footer>
