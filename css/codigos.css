@@ -1,0 +1,102 @@
+/* Estilos para a página de exemplos de código */
+.code-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.code-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 15px 0;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-example pre {
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.code-example::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #007acc;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 0 6px 0 6px;
+    font-size: 12px;
+}
+
+.code-description {
+    background: #f8f9fa;
+    border-left: 4px solid #007acc;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.language-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #007acc;
+    color: white;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.copy-button:hover {
+    opacity: 1;
+}
+
+/* Destaque de sintaxe */
+.keyword { color: #569cd6; }
+.string { color: #ce9178; }
+.comment { color: #6a9955; }
+.number { color: #b5cea8; }
+.function { color: #dcdcaa; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .code-container {
+        padding: 10px;
+    }
+    
+    .code-section {
+        padding: 15px;
+    }
+    
+    .code-example {
+        font-size: 13px;
+    }
+}
