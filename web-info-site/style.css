@@ -143,19 +143,19 @@ section::before {
 }
 
 section:nth-child(1)::before {
-    background: linear-gradient(90deg, #2563EB, #1d4ed8);
+    background: linear-gradient(90deg, #FF3366, #FF6B6B);
 }
 
 section:nth-child(2)::before {
-    background: linear-gradient(90deg, #10B981, #059669);
+    background: linear-gradient(90deg, #00F260, #0575E6);
 }
 
 section:nth-child(3)::before {
-    background: linear-gradient(90deg, #2563EB, #10B981);
+    background: linear-gradient(90deg, #7C4DFF, #FF3366);
 }
 
 section:nth-child(4)::before {
-    background: linear-gradient(90deg, #10B981, #2563EB);
+    background: linear-gradient(90deg, #FFA726, #FF3366);
 }
 
 section:hover {
@@ -182,8 +182,29 @@ section li::before {
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--secondary-color);
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+section:nth-child(1) li::before {
+    color: #FF3366;
+}
+
+section:nth-child(2) li::before {
+    color: #00F260;
+}
+
+section:nth-child(3) li::before {
+    color: #7C4DFF;
+}
+
+section:nth-child(4) li::before {
+    color: #FFA726;
+}
+
+section li:hover::before {
+    transform: translateX(5px);
+    text-shadow: 0 0 8px currentColor;
 }
 
 h2 {
@@ -209,19 +230,23 @@ h2::after {
 }
 
 section:nth-child(1) h2::after {
-    background: #2563EB;
+    background: #FF3366;
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
 }
 
 section:nth-child(2) h2::after {
-    background: #10B981;
+    background: #00F260;
+    box-shadow: 0 0 10px rgba(0, 242, 96, 0.5);
 }
 
 section:nth-child(3) h2::after {
-    background: #2563EB;
+    background: #7C4DFF;
+    box-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
 }
 
 section:nth-child(4) h2::after {
-    background: #10B981;
+    background: #FFA726;
+    box-shadow: 0 0 10px rgba(255, 167, 38, 0.5);
 }
 
 /* Listas */
