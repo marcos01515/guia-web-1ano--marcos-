@@ -2,18 +2,18 @@
 :root {
     --primary-color: #2563EB;
     --secondary-color: #10B981;
-    --dark-color: #111827;
-    --light-color: #ffffff;
-    --background-color: #F3F4F6;
+    --text-color: #111827;
+    --background-light: #F3F4F6;
     --border-color: #E5E7EB;
+    --light-color: #ffffff;
 }
 
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--dark-color);
+    background-color: var(--background-light);
+    color: var(--text-color);
 }
 
 /* Robot styles */
@@ -143,7 +143,7 @@ section::before {
 }
 
 section:nth-child(1)::before {
-    background: linear-gradient(90deg, #2563EB, #4F46E5);
+    background: linear-gradient(90deg, #2563EB, #1d4ed8);
 }
 
 section:nth-child(2)::before {
@@ -151,11 +151,11 @@ section:nth-child(2)::before {
 }
 
 section:nth-child(3)::before {
-    background: linear-gradient(90deg, #7C3AED, #6D28D9);
+    background: linear-gradient(90deg, #2563EB, #10B981);
 }
 
 section:nth-child(4)::before {
-    background: linear-gradient(90deg, #EC4899, #DB2777);
+    background: linear-gradient(90deg, #10B981, #2563EB);
 }
 
 section:hover {
@@ -165,10 +165,11 @@ section:hover {
 }
 
 section ul, section ol {
-    background: rgba(243, 244, 246, 0.5);
+    background: var(--background-light);
     padding: 1.5rem 2rem;
     border-radius: 10px;
     margin: 1rem 0;
+    border: 1px solid var(--border-color);
 }
 
 section li {
@@ -208,19 +209,19 @@ h2::after {
 }
 
 section:nth-child(1) h2::after {
-    background: #4F46E5;
+    background: #2563EB;
 }
 
 section:nth-child(2) h2::after {
-    background: #059669;
+    background: #10B981;
 }
 
 section:nth-child(3) h2::after {
-    background: #6D28D9;
+    background: #2563EB;
 }
 
 section:nth-child(4) h2::after {
-    background: #DB2777;
+    background: #10B981;
 }
 
 /* Listas */
